@@ -3,6 +3,7 @@
 
 import os
 import requests
+import json
 from bs4 import BeautifulSoup
 
 
@@ -32,6 +33,8 @@ class FetchData:
 
         req = requests.get(target)
         # 查看request默认的编码，发现与网站response不符，改为网站使用的gbk
+        print(req.headers)
+        exit(0)
         print(req.encoding)
         req.encoding = 'gbk'
 
